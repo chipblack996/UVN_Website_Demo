@@ -18,7 +18,11 @@
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && panel && !panel.hidden) setMenu(false); });
   panel?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
 
-  document.querySelector('.back-top')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  const backTop = document.querySelector('.back-top');
+  const updateBackTop = () => backTop?.classList.toggle('is-visible', window.scrollY > 640);
+  backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  window.addEventListener('scroll', updateBackTop, { passive: true });
+  updateBackTop();
   document.querySelectorAll('input[name="landing_page"]').forEach((input) => { input.value = location.href; });
 
   document.querySelectorAll('[data-async-form]').forEach((form) => {
