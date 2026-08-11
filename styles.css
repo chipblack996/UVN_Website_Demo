@@ -48,7 +48,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 116px;
+  scroll-padding-top: 92px;
 }
 
 body {
@@ -146,11 +146,11 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2rem, 3.2vw, 2.375rem);
+  font-size: clamp(2rem, 3.2vw, 2.25rem);
 }
 
 h2 {
-  font-size: clamp(1.625rem, 2.4vw, 1.875rem);
+  font-size: clamp(1.625rem, 2.4vw, 1.75rem);
 }
 
 h3 {
@@ -381,8 +381,8 @@ p {
 
 .header-inner {
   display: grid;
-  height: 84px;
-  grid-template-columns: 160px minmax(330px, 380px) minmax(0, 1fr);
+  height: 82px;
+  grid-template-columns: 152px minmax(350px, 370px) minmax(0, 1fr);
   align-items: center;
   gap: 18px;
 }
@@ -499,7 +499,7 @@ p {
 
 .category-track {
   display: grid;
-  height: 76px;
+  height: 70px;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   align-items: stretch;
 }
@@ -540,8 +540,8 @@ p {
 
 .category-menu-image {
   width: auto;
-  max-width: 74px;
-  height: 62px;
+  max-width: 58px;
+  height: 48px;
   object-fit: contain;
 }
 
@@ -1005,7 +1005,7 @@ p {
 .hero-grid {
   position: relative;
   display: grid;
-  min-height: 468px;
+  min-height: 432px;
   grid-template-columns: minmax(0, 1.04fr) minmax(340px, .96fr);
   align-items: center;
   gap: var(--space-6);
@@ -1016,7 +1016,7 @@ p {
   max-width: 680px;
   margin: var(--space-2) 0 var(--space-3);
   color: #fff;
-  font-size: clamp(2.5rem, 3.5vw, 3rem);
+  font-size: clamp(2.5rem, 3.3vw, 2.75rem);
 }
 
 .hero-copy h1 span {
@@ -1063,13 +1063,13 @@ p {
 
 .hero-photo {
   position: relative;
-  width: min(100%, 390px);
-  height: 410px;
+  width: min(100%, 378px);
+  height: 376px;
   margin: 0 0 0 auto;
   overflow: hidden;
   border-radius: var(--radius-lg);
   background: #eee8df;
-  box-shadow: var(--shadow-strong);
+  box-shadow: 0 8px 22px rgba(7, 29, 67, .1);
 }
 
 .hero-photo img {
@@ -1081,13 +1081,14 @@ p {
 
 .hero-photo figcaption {
   position: absolute;
-  right: var(--space-3);
-  bottom: var(--space-3);
-  left: var(--space-3);
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius);
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
   color: var(--blue-950);
   background: rgba(255, 255, 255, .94);
+  box-shadow: none;
 }
 
 .hero-photo figcaption strong,
@@ -1099,6 +1100,26 @@ p {
   margin-top: 2px;
   color: var(--muted);
   font-size: .72rem;
+}
+
+.catalog-cta {
+  display: flex;
+  min-height: 132px;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.catalog-cta h2 {
+  margin: 5px 0 0;
+}
+
+.catalog-cta .btn {
+  flex: 0 0 auto;
 }
 
 .trust-strip {
@@ -1223,7 +1244,7 @@ p {
   max-width: 800px;
   margin: var(--space-1) 0 var(--space-2);
   color: #fff;
-  font-size: clamp(2rem, 3vw, 2.375rem);
+  font-size: clamp(2rem, 3vw, 2.25rem);
 }
 
 .page-hero p {
@@ -1373,7 +1394,7 @@ p {
 
 .product-info h1 {
   margin: var(--space-2) 0 var(--space-3);
-  font-size: clamp(1.875rem, 2.8vw, 2.25rem);
+  font-size: clamp(1.875rem, 2.8vw, 2.125rem);
 }
 
 .product-lead {
@@ -1713,7 +1734,7 @@ p {
 
 .article-header h1 {
   margin: var(--space-2) 0 var(--space-3);
-  font-size: clamp(2rem, 3.2vw, 2.375rem);
+  font-size: clamp(2rem, 3.2vw, 2.25rem);
 }
 
 .article-meta {
@@ -1918,9 +1939,10 @@ p {
 
 .footer-embeds {
   display: grid;
-  grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1fr);
+  height: 250px;
+  grid-template-columns: minmax(0, 69fr) minmax(260px, 31fr);
   gap: var(--space-2);
-  padding: 20px 0 var(--space-4);
+  padding: 9px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -1937,11 +1959,70 @@ p {
 }
 
 .footer-embed iframe,
-.footer-embed-placeholder {
+.footer-embed-placeholder,
+.facebook-card {
   display: block;
   width: 100%;
-  height: 300px;
+  height: 100%;
   border: 0;
+}
+
+.facebook-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--surface);
+}
+
+.facebook-card > img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.facebook-card-copy span,
+.facebook-card-copy strong {
+  display: block;
+}
+
+.facebook-card-copy span {
+  color: var(--muted);
+  font-size: .72rem;
+}
+
+.facebook-card-copy strong {
+  margin-top: 2px;
+  color: var(--blue-900);
+  font-size: 1rem;
+}
+
+.facebook-card-copy p {
+  margin: 6px 0 0;
+  font-size: .78rem;
+}
+
+.facebook-card-action {
+  display: flex;
+  min-height: 38px;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--blue-200);
+  border-radius: var(--radius-sm);
+  color: var(--blue-800);
+  background: var(--blue-50);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.facebook-card-action:hover {
+  border-color: var(--blue-600);
+  background: #eaf2fc;
 }
 
 .footer-embed-placeholder {
@@ -1980,7 +2061,7 @@ p {
 }
 
 #bao-gia {
-  scroll-margin-top: 126px;
+  scroll-margin-top: 92px;
 }
 
 .floating-actions {
@@ -1990,21 +2071,21 @@ p {
   bottom: 18px;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 6px;
 }
 
 .floating-actions a,
 .floating-actions button {
   display: grid;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   place-items: center;
   border: 0;
   border-radius: var(--radius);
   color: var(--blue-800);
   background: var(--surface);
-  box-shadow: var(--shadow-soft);
-  font-weight: 800;
+  box-shadow: 0 2px 7px rgba(7, 29, 67, .07);
+  font-weight: 700;
 }
 
 .floating-actions a:nth-child(2) {
@@ -2136,7 +2217,7 @@ p {
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.25rem, 5vw, 2.75rem);
+    font-size: clamp(2.25rem, 5vw, 2.625rem);
   }
 
   .hero-photo {
@@ -2212,7 +2293,12 @@ p {
   }
 
   .footer-embeds {
+    height: auto;
     grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+  }
+
+  .footer-embed {
+    height: 240px;
   }
 }
 
@@ -2357,7 +2443,7 @@ p {
   }
 
   .product-info h1 {
-    font-size: 2.15rem;
+    font-size: 2.1rem;
   }
 
   .product-cta-grid,
@@ -2441,9 +2527,25 @@ p {
     gap: var(--space-2);
   }
 
+  .footer-embed {
+    height: 230px;
+  }
+
   .footer-embed iframe,
-  .footer-embed-placeholder {
-    height: 250px;
+  .footer-embed-placeholder,
+  .facebook-card {
+    height: 100%;
+  }
+
+  .catalog-cta {
+    min-height: 0;
+    align-items: stretch;
+    flex-direction: column;
+    padding: var(--space-4);
+  }
+
+  .catalog-cta .btn {
+    align-self: flex-start;
   }
 
   .footer-bottom .container {
