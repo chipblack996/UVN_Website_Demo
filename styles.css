@@ -881,6 +881,10 @@ p {
   object-fit: contain;
 }
 
+.product-image.product-image--square {
+  aspect-ratio: 1 / 1;
+}
+
 .product-placeholder {
   display: grid;
   place-content: center;
@@ -1005,6 +1009,10 @@ p {
 .product-card--homepage .product-image {
   height: 168px;
   aspect-ratio: auto;
+}
+
+.product-card--homepage .product-image.product-image--square {
+  aspect-ratio: 1 / 1;
 }
 
 .product-card--homepage .product-placeholder {
