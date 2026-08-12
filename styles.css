@@ -1972,6 +1972,8 @@ p {
   position: sticky;
   top: 128px;
   height: max-content;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
   padding-left: var(--space-3);
   border-left: 2px solid var(--line);
 }
