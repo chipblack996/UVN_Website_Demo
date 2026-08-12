@@ -762,7 +762,11 @@ p {
 
 .category-showcase-title h3 {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.04rem;
+}
+
+.category-showcase-head .text-link {
+  font-size: .8rem;
 }
 
 .category-sample-grid {
@@ -2601,11 +2605,11 @@ p {
 
   .category-showcase-head .text-link {
     flex: 0 0 auto;
-    font-size: .72rem;
+    font-size: .576rem;
   }
 
   .category-showcase-title h3 {
-    font-size: 1.05rem;
+    font-size: .84rem;
   }
 
   .category-sample-grid {
