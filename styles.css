@@ -461,6 +461,14 @@ p {
   font-weight: 700;
 }
 
+.header-inner > .search-box {
+  height: 38px;
+}
+
+.header-inner > .search-box button {
+  height: 31px;
+}
+
 .search-suggestions {
   position: absolute;
   z-index: 120;
