@@ -382,9 +382,9 @@ p {
 .header-inner {
   display: grid;
   height: 82px;
-  grid-template-columns: 152px minmax(350px, 370px) minmax(0, 1fr);
+  grid-template-columns: 152px 300px minmax(0, 1fr);
   align-items: center;
-  gap: 18px;
+  gap: 14px;
 }
 
 .brand {
@@ -452,11 +452,12 @@ p {
 .search-box button {
   height: 34px;
   margin-right: 3px;
-  padding: 0 var(--space-3);
+  padding: 0 12px;
   border: 0;
   border-radius: 5px;
   color: #fff;
   background: var(--blue-800);
+  font-size: .8rem;
   font-weight: 700;
 }
 
@@ -499,7 +500,7 @@ p {
 
 .category-track {
   display: grid;
-  height: 70px;
+  height: 74px;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   align-items: stretch;
 }
@@ -511,8 +512,8 @@ p {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  gap: 0;
-  padding: 4px 2px;
+  gap: 2px;
+  padding: 3px 2px 2px;
   border-radius: var(--radius-sm);
   color: #34435a;
   font-size: .68rem;
@@ -538,11 +539,32 @@ p {
   background: var(--blue-700);
 }
 
+.category-menu-visual {
+  display: flex;
+  width: 58px;
+  height: 54px;
+  flex: 0 0 54px;
+  align-items: center;
+  justify-content: center;
+}
+
 .category-menu-image {
-  width: auto;
-  max-width: 58px;
-  height: 48px;
+  width: 58px;
+  height: 54px;
   object-fit: contain;
+}
+
+.category-menu-label {
+  display: block;
+  width: 100%;
+  height: 14px;
+  overflow: hidden;
+  font-size: .64rem;
+  font-weight: 700;
+  line-height: 14px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .category-icon {
@@ -698,7 +720,7 @@ p {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
   gap: var(--space-3);
 }
 
@@ -836,6 +858,46 @@ p {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   font-size: .8rem;
+}
+
+.home-page .product-grid {
+  grid-auto-rows: 1fr;
+}
+
+.product-card--homepage {
+  height: 100%;
+}
+
+.product-card--homepage .product-image {
+  height: 168px;
+  aspect-ratio: auto;
+}
+
+.product-card--homepage .product-placeholder {
+  min-height: 168px;
+}
+
+.product-card--homepage .product-card-category {
+  display: -webkit-box;
+  min-height: 2.6em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.3;
+}
+
+.product-card--homepage h3 {
+  display: -webkit-box;
+  min-height: 2.44em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.product-card--homepage .product-card-description {
+  min-height: 2.9em;
+  -webkit-line-clamp: 2;
+  line-height: 1.45;
 }
 
 .circle-link {
