@@ -551,16 +551,16 @@ p {
 
 .category-menu-visual {
   display: flex;
-  width: 41px;
-  height: 38px;
-  flex: 0 0 38px;
+  width: 45px;
+  height: 42px;
+  flex: 0 0 42px;
   align-items: center;
   justify-content: center;
 }
 
 .category-menu-image {
-  width: 41px;
-  height: 38px;
+  width: 45px;
+  height: 42px;
   object-fit: contain;
 }
 
