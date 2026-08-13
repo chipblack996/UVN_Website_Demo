@@ -1008,13 +1008,13 @@ p {
 }
 
 .product-card.product-card--compact {
-  width: 288px;
+  width: 100%;
   max-width: 100%;
   align-self: start;
 }
 
 .product-grid:has(.product-card--compact) {
-  grid-template-columns: repeat(auto-fill, minmax(min(288px, 100%), 288px));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .product-card--compact .product-card-body {
@@ -3441,5 +3441,17 @@ p {
 
   .login-card {
     padding: 26px 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .product-grid:has(.product-card--compact) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid:has(.product-card--compact) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
