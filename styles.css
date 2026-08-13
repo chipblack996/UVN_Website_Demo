@@ -390,7 +390,7 @@ p {
 .header-inner {
   display: grid;
   height: 82px;
-  grid-template-columns: 152px 300px minmax(0, 1fr);
+  grid-template-columns: 152px 240px minmax(0, 1fr);
   align-items: center;
   gap: 14px;
 }
@@ -478,11 +478,25 @@ p {
 }
 
 .header-inner > .search-box {
-  height: 38px;
+  height: 30px;
+  padding-left: 11px;
+  border-radius: 5px;
 }
 
 .header-inner > .search-box button {
-  height: 38px;
+  width: 34px;
+  min-width: 34px;
+  height: 30px;
+  border-radius: 0 5px 5px 0;
+}
+
+.header-inner > .search-box button svg {
+  width: 19px;
+  height: 19px;
+}
+
+.header-inner > .search-box input {
+  font-size: .8rem;
 }
 
 .search-suggestions {
@@ -519,7 +533,7 @@ p {
 }
 
 .category-nav {
-  width: 70%;
+  width: calc(70% - 42px);
   min-width: 0;
   justify-self: end;
 }
