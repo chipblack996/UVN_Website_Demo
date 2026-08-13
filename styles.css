@@ -1818,6 +1818,10 @@ p {
   background: var(--soft);
 }
 
+.review-section > .container > h2 {
+  font-size: 1.225rem;
+}
+
 .review-summary {
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr);
