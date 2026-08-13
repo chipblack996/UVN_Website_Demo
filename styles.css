@@ -1007,12 +1007,26 @@ p {
   text-overflow: ellipsis;
 }
 
-.product-card--compact-pilot h3 {
-  margin-top: 0;
+.product-card.product-card--compact-pilot {
+  width: 288px;
+  max-width: 100%;
+  align-self: start;
 }
 
-.product-card--compact-pilot .product-card-foot {
-  justify-content: flex-end;
+.product-grid:has(.product-card--compact-pilot) {
+  grid-template-columns: repeat(auto-fill, minmax(min(288px, 100%), 288px));
+}
+
+.product-card--compact-pilot .product-card-body {
+  padding: 12px 14px;
+}
+
+.product-card--compact-pilot .product-card-description {
+  margin-bottom: 0;
+}
+
+.product-card--compact-pilot h3 {
+  margin-top: 0;
 }
 
 .home-page .product-grid {
