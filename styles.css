@@ -2170,7 +2170,6 @@ p {
 .footer-company {
   min-height: 100%;
   padding-left: var(--space-4);
-  border-left: 1px solid var(--line);
 }
 
 .footer-links {
@@ -2232,7 +2231,6 @@ p {
   grid-template-columns: minmax(0, 69fr) minmax(260px, 31fr);
   gap: var(--space-2);
   padding: 9px 0;
-  border-top: 1px solid var(--line);
 }
 
 .footer-embeds--single {
