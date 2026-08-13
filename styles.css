@@ -1743,9 +1743,13 @@ p {
   margin-bottom: var(--space-4);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  font-size: .9rem;
 }
 
-.info-panel h2,
+.info-panel h2 {
+  font-size: 1.1rem;
+}
+
 .sticky-consult h2 {
   font-size: 1.2rem;
 }
