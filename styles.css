@@ -435,11 +435,11 @@ p {
   min-width: 0;
   height: 42px;
   align-items: center;
-  gap: 10px;
+  gap: 0;
   padding-left: 14px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  background: #f9fbfd;
+  background: #fff;
 }
 
 .search-box:focus-within {
@@ -458,15 +458,23 @@ p {
 }
 
 .search-box button {
-  height: 34px;
-  margin-right: 3px;
-  padding: 0 12px;
+  display: grid;
+  width: 42px;
+  min-width: 42px;
+  height: 38px;
+  margin: -1px -1px -1px 0;
+  padding: 0;
+  place-items: center;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   color: #fff;
   background: var(--blue-800);
-  font-size: .8rem;
-  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .16s ease;
+}
+
+.search-box button:hover {
+  background: var(--blue-700);
 }
 
 .header-inner > .search-box {
@@ -474,7 +482,7 @@ p {
 }
 
 .header-inner > .search-box button {
-  height: 31px;
+  height: 38px;
 }
 
 .search-suggestions {
