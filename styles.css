@@ -934,29 +934,9 @@ p {
   font-weight: 650;
 }
 
-.ai-image-label,
-.article-media:has(img[src^="/images/articles/"])::after,
-.article-featured:has(img[src^="/images/articles/"])::after {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  padding: 5px 8px;
-  border-radius: var(--radius-sm);
-  color: var(--blue-950);
-  background: rgba(255, 255, 255, .92);
-  box-shadow: var(--shadow-soft);
-  font-size: .6rem;
-  font-weight: 700;
-}
-
 .article-media,
 .article-featured {
   position: relative;
-}
-
-.article-media:has(img[src^="/images/articles/"])::after,
-.article-featured:has(img[src^="/images/articles/"])::after {
-  content: "Ảnh minh họa bằng AI";
 }
 
 .product-card-body {
