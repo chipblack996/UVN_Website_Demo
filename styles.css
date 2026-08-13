@@ -1919,14 +1919,19 @@ p {
   font-size: 1rem;
 }
 
+.rich-content h1 {
+  margin: 1.8em 0 .65em;
+  font-size: 1.75rem;
+}
+
 .rich-content h2 {
   margin: 1.8em 0 .65em;
-  font-size: 1.625rem;
+  font-size: 1.4rem;
 }
 
 .rich-content h3 {
   margin: 1.55em 0 .55em;
-  font-size: 1.28rem;
+  font-size: 1.1rem;
 }
 
 .rich-content p,
