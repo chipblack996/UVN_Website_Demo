@@ -1650,7 +1650,7 @@ p {
 
 .product-info h1 {
   margin: var(--space-2) 0 var(--space-3);
-  font-size: clamp(1.875rem, 2.8vw, 2.125rem);
+  font-size: clamp(1.3125rem, 1.96vw, 1.4875rem);
 }
 
 .product-lead {
@@ -1687,12 +1687,12 @@ p {
 
 .product-cta-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
 .product-cta-grid .wide {
-  grid-column: 1 / -1;
+  grid-column: auto;
 }
 
 .consult-options {
@@ -2742,7 +2742,7 @@ p {
   }
 
   .product-info h1 {
-    font-size: 2.1rem;
+    font-size: 1.47rem;
   }
 
   .product-cta-grid,
