@@ -1903,6 +1903,12 @@ p {
   scroll-margin-top: 190px;
 }
 
+.review-form-wrap .btn[type="submit"] {
+  min-height: 36px;
+  padding: 7px 14px;
+  font-size: .9rem;
+}
+
 .star-input {
   display: flex;
   flex-direction: row-reverse;
