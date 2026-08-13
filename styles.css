@@ -390,7 +390,7 @@ p {
 .header-inner {
   display: grid;
   height: 82px;
-  grid-template-columns: 152px 240px minmax(0, 1fr);
+  grid-template-columns: max-content minmax(264px, 1fr) 504px;
   align-items: center;
   gap: 14px;
 }
@@ -478,7 +478,9 @@ p {
 }
 
 .header-inner > .search-box {
+  width: 264px;
   height: 30px;
+  justify-self: center;
   padding-left: 11px;
   border-radius: 5px;
 }
@@ -533,7 +535,7 @@ p {
 }
 
 .category-nav {
-  width: calc(70% - 42px);
+  width: 100%;
   min-width: 0;
   justify-self: end;
 }
