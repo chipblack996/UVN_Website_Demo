@@ -2188,7 +2188,7 @@ p {
 
 .footer-links a {
   color: #435168;
-  font-size: .86rem;
+  font-size: .96rem;
 }
 
 .footer-links a:hover,
@@ -2200,7 +2200,7 @@ p {
   max-width: 620px;
   margin: 0 0 var(--space-2);
   color: #536177;
-  font-size: .86rem;
+  font-size: .96rem;
 }
 
 .footer-company ul {
@@ -2217,7 +2217,7 @@ p {
   align-items: start;
   gap: 7px;
   color: #3e4c61;
-  font-size: .85rem;
+  font-size: .95rem;
 }
 
 .footer-company li > span {
