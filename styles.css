@@ -1837,7 +1837,7 @@ p {
 
 .variant-quantity {
   display: grid;
-  grid-template-columns: 132px 120px;
+  grid-template-columns: 132px 60px;
   align-items: center;
   gap: 10px;
   margin: 14px 0;
@@ -3025,7 +3025,7 @@ p {
   }
 
   .variant-quantity {
-    grid-template-columns: 1fr 110px;
+    grid-template-columns: 1fr 60px;
   }
 
   .request-cart-fields {
