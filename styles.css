@@ -998,6 +998,23 @@ p {
   font-size: .8rem;
 }
 
+.product-card--compact-pilot h3,
+.product-card--compact-pilot .product-card-description {
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product-card--compact-pilot h3 {
+  margin-top: 0;
+}
+
+.product-card--compact-pilot .product-card-foot {
+  justify-content: flex-end;
+}
+
 .home-page .product-grid {
   grid-auto-rows: 1fr;
 }
