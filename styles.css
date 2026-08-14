@@ -2895,49 +2895,144 @@ p {
 .floating-actions {
   position: fixed;
   z-index: 90;
-  right: 18px;
-  bottom: 18px;
+  right: 20px;
+  bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
 }
 
 .floating-actions a,
 .floating-actions button {
+  position: relative;
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   place-items: center;
-  border: 0;
-  border-radius: var(--radius);
+  border: 1px solid rgba(7, 29, 67, .08);
+  border-radius: 50%;
   color: var(--blue-800);
   background: var(--surface);
-  box-shadow: 0 2px 7px rgba(7, 29, 67, .07);
+  box-shadow: 0 3px 10px rgba(7, 29, 67, .12);
   font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
 }
 
-.floating-actions a:nth-child(2) {
+.floating-actions a:hover,
+.floating-actions a:focus-visible,
+.floating-actions button:hover,
+.floating-actions button:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(7, 29, 67, .2);
+  outline: none;
+}
+
+.floating-actions .fab-phone:hover,
+.floating-actions .fab-phone:focus-visible {
+  color: #fff;
+  background: var(--blue-800);
+  border-color: var(--blue-800);
+}
+
+.floating-actions .fab-zalo {
+  color: #0068ff;
+}
+
+.floating-actions .fab-zalo:hover,
+.floating-actions .fab-zalo:focus-visible {
+  color: #fff;
+  background: #0068ff;
+  border-color: #0068ff;
+}
+
+.floating-actions .fab-quote {
+  color: #fff;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.floating-actions .fab-quote:hover,
+.floating-actions .fab-quote:focus-visible {
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.floating-actions .fab-cart {
   color: var(--blue-700);
 }
 
-.floating-actions a:nth-child(3) {
+.floating-actions .fab-cart:hover,
+.floating-actions .fab-cart:focus-visible {
   color: #fff;
-  background: var(--red);
+  background: var(--blue-700);
+  border-color: var(--blue-700);
 }
 
 .floating-actions span {
-  display: none;
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 13px);
+  display: block;
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: var(--blue-950);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(6px);
+  transition: opacity .16s ease, transform .16s ease, visibility .16s ease;
+  box-shadow: 0 6px 16px rgba(7, 29, 67, .22);
+}
+
+.floating-actions span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  border: 5px solid transparent;
+  border-left-color: var(--blue-950);
+  transform: translateY(-50%);
+}
+
+.floating-actions a:hover span,
+.floating-actions a:focus-visible span,
+.floating-actions button:hover span,
+.floating-actions button:focus-visible span {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
 }
 
 .floating-actions .back-top {
+  color: var(--blue-900);
   visibility: hidden;
   opacity: 0;
-  transition: opacity .18s ease, visibility .18s ease;
+  transform: translateY(8px);
+  transition: opacity .18s ease, visibility .18s ease, transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease;
 }
 
 .floating-actions .back-top.is-visible {
   visibility: visible;
   opacity: 1;
+  transform: translateY(0);
+}
+
+.floating-actions .back-top:hover,
+.floating-actions .back-top:focus-visible {
+  color: #fff;
+  background: var(--blue-950);
+  border-color: var(--blue-950);
+}
+
+.floating-actions .back-top.is-visible:hover,
+.floating-actions .back-top.is-visible:focus-visible {
+  transform: translateY(-3px);
 }
 
 /* 13. Responsive */
@@ -3635,13 +3730,36 @@ p {
     height: 60px;
     flex-direction: column;
     gap: 1px;
+    border: 0;
     border-radius: 0;
     box-shadow: none;
     font-size: .64rem;
   }
 
+  .floating-actions a:hover,
+  .floating-actions a:focus-visible,
+  .floating-actions button:hover,
+  .floating-actions button:focus-visible {
+    transform: none;
+    box-shadow: none;
+  }
+
   .floating-actions span {
+    position: static;
     display: block;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  .floating-actions span::after {
+    display: none;
   }
 
   .floating-actions .back-top {
