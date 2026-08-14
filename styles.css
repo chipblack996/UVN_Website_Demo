@@ -2601,10 +2601,11 @@ p {
 }
 
 .footer-lead-form .btn {
-  min-height: 40px;
+  width: 112.5px;
+  min-height: 36px;
   justify-self: start;
   margin-top: 2px;
-  padding: 8px 14px;
+  padding: 7px 12.6px;
   font-size: .8rem;
 }
 
