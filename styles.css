@@ -1777,6 +1777,77 @@ p {
   padding: 28px 0 56px;
 }
 
+.subcategory-section {
+  margin-bottom: 28px;
+}
+
+.subcategory-section > h2 {
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+}
+
+.subcategory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.subcategory-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.subcategory-card:hover {
+  border-color: var(--blue-200);
+  box-shadow: var(--shadow-hover);
+}
+
+.subcategory-card > a,
+.subcategory-card-copy,
+.subcategory-card-copy strong,
+.subcategory-card-copy small {
+  display: block;
+}
+
+.subcategory-card-media,
+.subcategory-card-placeholder {
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 5 / 3;
+  place-items: center;
+  color: var(--blue-700);
+  background: var(--blue-50);
+}
+
+.subcategory-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+}
+
+.subcategory-card-copy {
+  padding: 12px 14px;
+}
+
+.subcategory-card-copy strong {
+  font-size: .84rem;
+}
+
+.subcategory-card-copy small {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 3px;
+  color: var(--muted);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: .68rem;
+  line-height: 1.4;
+}
+
 .category-products-head {
   display: flex;
   align-items: center;
@@ -2864,6 +2935,10 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .subcategory-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .category-benefit:nth-child(2) {
     border-right: 0;
   }
@@ -3304,6 +3379,19 @@ p {
   .category-products {
     padding-top: 24px;
     padding-bottom: 44px;
+  }
+
+  .subcategory-section {
+    margin-bottom: 24px;
+  }
+
+  .subcategory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .subcategory-card-copy {
+    padding: 10px;
   }
 
   .category-products-head {
