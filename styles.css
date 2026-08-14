@@ -903,7 +903,7 @@ p {
 .product-image {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   background: #f0f3f7;
 }
 
