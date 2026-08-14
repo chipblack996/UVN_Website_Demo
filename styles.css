@@ -1653,7 +1653,7 @@ p {
   max-width: 640px;
   margin: 0 0 9px;
   color: #fff;
-  font-size: 1.875rem;
+  font-size: 1.75rem;
 }
 
 .category-hero-copy > p {
@@ -1722,6 +1722,10 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: center 7%;
+}
+
+.category-hero-media--ao-thun img {
+  object-position: center 3%;
 }
 
 .category-breadcrumbs {
