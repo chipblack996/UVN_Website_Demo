@@ -1674,7 +1674,7 @@ p {
 .category-hero-usp {
   display: grid;
   min-width: 0;
-  grid-template-columns: 30px minmax(0, 1fr);
+  grid-template-columns: 26px minmax(0, 1fr);
   align-items: center;
   gap: 7px;
   color: var(--blue-on-dark);
@@ -1682,8 +1682,8 @@ p {
 
 .category-hero-usp > span {
   display: grid;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   place-items: center;
   border: 2px solid rgba(183, 203, 229, .25);
   border-radius: 8px;
@@ -3361,13 +3361,13 @@ p {
   }
 
   .category-hero-usp {
-    grid-template-columns: 28px minmax(0, 1fr);
+    grid-template-columns: 24px minmax(0, 1fr);
     gap: 6px;
   }
 
   .category-hero-usp > span {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   .category-hero-usp strong {
