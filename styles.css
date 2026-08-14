@@ -2589,6 +2589,12 @@ p {
   gap: var(--space-1);
 }
 
+#footer-full-name,
+#footer-phone {
+  height: 44.5px;
+  padding-block: 9.8px;
+}
+
 .footer-lead-form textarea {
   min-height: 84px;
   resize: vertical;
