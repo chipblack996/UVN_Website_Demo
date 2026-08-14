@@ -502,6 +502,7 @@ p {
   height: 31.5px;
   justify-self: center;
   padding-left: 11.55px;
+  border-width: 2px;
   border-radius: 5px;
 }
 
@@ -518,7 +519,7 @@ p {
 }
 
 .header-inner > .search-box input {
-  font-size: .8rem;
+  font-size: 13px;
 }
 
 .search-suggestions {
