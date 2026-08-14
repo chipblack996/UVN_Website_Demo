@@ -1626,13 +1626,6 @@ p {
   font-weight: 700;
 }
 
-.category-content {
-  width: min(calc(100% - (var(--gutter) * 2)), 880px);
-  margin: var(--space-6) auto 0;
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--line);
-}
-
 .category-hero {
   position: relative;
   display: grid;
