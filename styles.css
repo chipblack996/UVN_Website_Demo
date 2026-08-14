@@ -2761,37 +2761,59 @@ p {
 
 .footer-channel-list {
   display: grid;
-  gap: 7px;
+  gap: 13px;
 }
 
 .footer-channel-link {
   display: grid;
-  min-height: 51px;
-  grid-template-columns: 38px minmax(0, 1fr) auto;
+  min-height: 40px;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
   align-items: center;
-  gap: 9px;
-  padding: 7px 9px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  gap: 11px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
   color: var(--blue-900);
-  background: var(--surface);
+  background: transparent;
 }
 
 .footer-channel-link:not(.is-pending):hover {
-  border-color: var(--blue-300);
-  background: var(--blue-50);
+  color: var(--blue-700);
 }
 
 .channel-badge {
   display: grid;
-  width: 38px;
+  width: 34px;
   height: 34px;
   place-items: center;
-  border-radius: 9px;
+  border-radius: 50%;
   color: #fff;
   background: var(--blue-800);
   font-size: .66rem;
   font-weight: 800;
+}
+
+.channel-brand-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+}
+
+.channel-brand-icon svg {
+  display: block;
+  width: 31px;
+  height: 31px;
+}
+
+.channel-brand-icon--youtube svg {
+  width: 32px;
+  height: 24px;
+}
+
+.channel-brand-icon--tiktok svg {
+  width: 29px;
+  height: 29px;
 }
 
 .footer-channel-link strong,
