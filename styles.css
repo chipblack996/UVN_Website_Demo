@@ -499,7 +499,7 @@ p {
 
 .header-inner > .search-box {
   width: 277.2px;
-  height: 31.5px;
+  height: 33.5px;
   justify-self: center;
   padding-left: 11.55px;
   border-width: 2px;
@@ -509,7 +509,7 @@ p {
 .header-inner > .search-box button {
   width: 35.7px;
   min-width: 35.7px;
-  height: 31.5px;
+  height: 33.5px;
   border-radius: 0 5px 5px 0;
 }
 
