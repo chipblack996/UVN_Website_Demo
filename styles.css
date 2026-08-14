@@ -397,36 +397,14 @@ p {
 
 .brand {
   display: flex;
+  width: 126px;
   align-items: center;
-  gap: 8px;
 }
 
 .brand img {
-  width: 46px;
-  height: 46px;
-  object-fit: cover;
-}
-
-.brand span,
-.brand strong,
-.brand small {
-  display: block;
-  line-height: 1;
-}
-
-.brand strong {
-  color: var(--blue-800);
-  font-family: var(--font-display);
-  font-size: .94rem;
-  letter-spacing: .045em;
-}
-
-.brand small {
-  margin-top: 5px;
-  color: var(--red);
-  font-size: .58rem;
-  font-weight: 700;
-  letter-spacing: .16em;
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
 }
 
 .search-box {
@@ -478,23 +456,23 @@ p {
 }
 
 .header-inner > .search-box {
-  width: 264px;
-  height: 30px;
+  width: 277.2px;
+  height: 31.5px;
   justify-self: center;
-  padding-left: 11px;
+  padding-left: 11.55px;
   border-radius: 5px;
 }
 
 .header-inner > .search-box button {
-  width: 34px;
-  min-width: 34px;
-  height: 30px;
+  width: 35.7px;
+  min-width: 35.7px;
+  height: 31.5px;
   border-radius: 0 5px 5px 0;
 }
 
 .header-inner > .search-box button svg {
-  width: 19px;
-  height: 19px;
+  width: 19.95px;
+  height: 19.95px;
 }
 
 .header-inner > .search-box input {
@@ -2842,12 +2820,8 @@ p {
   }
 
   .brand img {
-    width: 44px;
-    height: 44px;
-  }
-
-  .brand strong {
-    font-size: .88rem;
+    width: 60px;
+    height: 60px;
   }
 
   .hero-grid {
