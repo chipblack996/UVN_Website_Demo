@@ -44,6 +44,10 @@
             localStorage.removeItem('uvn-request-cart-v1');
             document.dispatchEvent(new CustomEvent('request-cart-updated'));
           }
+          if (form.matches('[data-mobile-lead-form]')) {
+            try { localStorage.setItem('uvn-lead-prompt-state', JSON.stringify({ submitted: true })); } catch {}
+            setTimeout(() => { const promptEl = form.closest('.mobile-lead-prompt'); if (promptEl) promptEl.hidden = true; }, 1400);
+          }
           const keep = [...form.querySelectorAll('input[type="hidden"]')].map((input) => [input.name, input.value]);
           form.reset();
           keep.forEach(([name, value]) => { const input = form.querySelector(`input[name="${name}"]`); if (input) input.value = value; });
@@ -54,6 +58,29 @@
       } finally { button.disabled = false; }
     });
   });
+
+  (() => {
+    const prompt = document.querySelector('#mobile-lead-prompt');
+    if (!prompt) return;
+    const STORAGE_KEY = 'uvn-lead-prompt-state';
+    const DISMISS_DAYS = 7;
+    const isMobile = () => window.matchMedia('(max-width: 640px)').matches;
+    let state = null;
+    try { state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { state = null; }
+    if (state?.submitted) return;
+    if (state?.dismissedAt && Date.now() - state.dismissedAt < DISMISS_DAYS * 24 * 60 * 60 * 1000) return;
+    if (!isMobile()) return;
+
+    setTimeout(() => {
+      if (!isMobile()) return;
+      prompt.hidden = false;
+    }, 20000);
+
+    prompt.querySelector('[data-mobile-lead-close]')?.addEventListener('click', () => {
+      prompt.hidden = true;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ dismissedAt: Date.now() })); } catch {}
+    });
+  })();
 
   const search = document.querySelector('#header-search');
   const suggestions = document.querySelector('#search-suggestions');
