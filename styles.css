@@ -2750,6 +2750,14 @@ p {
   font-style: normal;
 }
 
+.footer-working-hours > span {
+  display: block;
+}
+
+.footer-working-hours > span + span {
+  margin-top: 2px;
+}
+
 .footer-embeds {
   display: grid;
   height: 250px;
