@@ -2427,6 +2427,15 @@ p {
   color: #425168;
 }
 
+.legal-info {
+  display: grid;
+  gap: 8px;
+}
+
+.rich-content .legal-info p {
+  margin: 0;
+}
+
 .rich-content img {
   max-height: 720px;
   margin: var(--space-4) auto;
