@@ -1793,6 +1793,12 @@ p {
   background: var(--blue-50);
 }
 
+.category-benefit-icon img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}
+
 .category-benefit div {
   min-width: 0;
 }
@@ -4406,6 +4412,146 @@ p {
   display: none;
 }
 
+.benefit-editor-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.benefit-editor-heading h2 {
+  padding: 0;
+  margin: 0 0 5px;
+  border: 0;
+}
+
+.benefit-editor-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+.benefit-editor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.benefit-editor-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fafbfd;
+}
+
+.benefit-editor-card > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 11px;
+  margin-bottom: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.benefit-editor-card > header span {
+  color: var(--blue-900);
+  font-weight: 800;
+}
+
+.benefit-editor-card > header small,
+.benefit-custom-icon > small {
+  color: var(--muted);
+  font-size: .68rem;
+}
+
+.benefit-icon-picker {
+  padding: 0;
+  margin: 0 0 14px;
+  border: 0;
+}
+
+.benefit-icon-picker legend,
+.benefit-custom-icon > span {
+  margin-bottom: 7px;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.benefit-icon-picker > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.benefit-icon-option {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 70px;
+  place-items: center;
+  gap: 3px;
+  padding: 8px 5px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--blue-700);
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+}
+
+.benefit-icon-option:has(input:checked) {
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 2px rgba(22, 84, 184, .12);
+  background: var(--blue-50);
+}
+
+.benefit-icon-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.benefit-icon-option small {
+  overflow: hidden;
+  width: 100%;
+  color: var(--muted);
+  font-size: .62rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.benefit-custom-icon {
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+}
+
+.benefit-custom-icon > span,
+.benefit-custom-icon > small {
+  display: block;
+}
+
+.benefit-custom-icon .image-upload-field {
+  margin-top: 10px;
+}
+
+.benefit-image-preview {
+  object-fit: contain;
+  padding: 8px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.benefit-upload-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
 .media-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -4559,7 +4705,8 @@ p {
   }
 
   .edit-grid,
-  .admin-grid {
+  .admin-grid,
+  .benefit-editor-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -4593,6 +4740,15 @@ p {
 
   .toolbar form {
     overflow-x: auto;
+  }
+
+  .benefit-editor-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .benefit-icon-picker > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .media-grid {
