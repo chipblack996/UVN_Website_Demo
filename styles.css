@@ -2964,25 +2964,32 @@ p {
   bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .floating-actions a,
 .floating-actions button {
   position: relative;
   display: grid;
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   place-items: center;
-  border: 1px solid rgba(7, 29, 67, .08);
+  border: 1px solid #d9e3f1;
   border-radius: 50%;
   color: var(--blue-800);
   background: var(--surface);
-  box-shadow: 0 3px 10px rgba(7, 29, 67, .12);
+  box-shadow: 0 8px 24px rgba(7, 29, 67, .14);
   font-weight: 700;
   font-size: .95rem;
   cursor: pointer;
   transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+
+.floating-actions > a > svg,
+.floating-actions > button > svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
 }
 
 .floating-actions a:hover,
@@ -3003,6 +3010,7 @@ p {
 
 .floating-actions .fab-zalo {
   color: #0068ff;
+  background: #f2f7ff;
 }
 
 .floating-actions .fab-zalo:hover,
@@ -3026,6 +3034,7 @@ p {
 
 .floating-actions .fab-cart {
   color: var(--blue-700);
+  background: #f4f7fb;
 }
 
 .floating-actions .fab-cart:hover,
