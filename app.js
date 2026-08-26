@@ -40,6 +40,10 @@
         status.textContent = data.message || (response.ok ? 'Đã gửi thành công.' : 'Không thể gửi yêu cầu.');
         status.classList.add(response.ok ? 'success' : 'error');
         if (response.ok) {
+          const interest = form.querySelector('[name="product_interest"]')?.value || 'general';
+          const source = form.querySelector('[name="source"]')?.value || 'website';
+          if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { lead_source: source, product_interest: interest });
+          if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: interest, content_category: source });
           if (form.matches('[data-cart-lead-form]')) {
             localStorage.removeItem('uvn-request-cart-v1');
             document.dispatchEvent(new CustomEvent('request-cart-updated'));
