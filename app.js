@@ -25,6 +25,14 @@
   updateBackTop();
   document.querySelectorAll('input[name="landing_page"]').forEach((input) => { input.value = location.href; });
 
+  document.addEventListener('click', (event) => {
+    const actionLink = event.target.closest?.('[data-local-action]');
+    if (!actionLink) return;
+    const action = actionLink.dataset.localAction || 'unknown';
+    if (typeof window.gtag === 'function') window.gtag('event', 'local_action', { action_name: action, link_url: actionLink.href });
+    if (typeof window.fbq === 'function') window.fbq('trackCustom', 'LocalAction', { action_name: action });
+  });
+
   document.querySelectorAll('[data-async-form]').forEach((form) => {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
