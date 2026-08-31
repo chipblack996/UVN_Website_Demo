@@ -23,7 +23,32 @@
   backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   window.addEventListener('scroll', updateBackTop, { passive: true });
   updateBackTop();
-  document.querySelectorAll('input[name="landing_page"]').forEach((input) => { input.value = location.href; });
+  const attributionStorageKey = 'uvn-first-touch-attribution-v1';
+  const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  const landingUrl = new URL(location.href);
+  const currentAttribution = {};
+  for (const key of attributionKeys) {
+    const value = landingUrl.searchParams.get(key)?.trim();
+    if (value) currentAttribution[key] = value.slice(0, 120);
+  }
+  let attribution = currentAttribution;
+  try {
+    const stored = JSON.parse(sessionStorage.getItem(attributionStorageKey) || '{}');
+    if (stored && typeof stored === 'object' && !Array.isArray(stored) && stored.utm_source) {
+      attribution = stored;
+    } else if (currentAttribution.utm_source) {
+      sessionStorage.setItem(attributionStorageKey, JSON.stringify(currentAttribution));
+    }
+  } catch {
+    attribution = currentAttribution;
+  }
+  if (attribution.utm_source) {
+    for (const key of attributionKeys) {
+      const value = typeof attribution[key] === 'string' ? attribution[key].trim().slice(0, 120) : '';
+      if (value) landingUrl.searchParams.set(key, value);
+    }
+  }
+  document.querySelectorAll('input[name="landing_page"]').forEach((input) => { input.value = landingUrl.href; });
 
   document.addEventListener('click', (event) => {
     const actionLink = event.target.closest?.('[data-local-action]');
