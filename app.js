@@ -56,6 +56,17 @@
     const action = actionLink.dataset.localAction || 'unknown';
     if (typeof window.gtag === 'function') window.gtag('event', 'local_action', { action_name: action, link_url: actionLink.href });
     if (typeof window.fbq === 'function') window.fbq('trackCustom', 'LocalAction', { action_name: action });
+    const payload = JSON.stringify({
+      action,
+      path: location.pathname,
+      utm_source: attribution.utm_source || '',
+      utm_campaign: attribution.utm_campaign || '',
+    });
+    if (typeof navigator.sendBeacon === 'function') {
+      navigator.sendBeacon('/api/local-actions', new Blob([payload], { type: 'application/json' }));
+    } else {
+      fetch('/api/local-actions', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true }).catch(() => {});
+    }
   });
 
   document.querySelectorAll('[data-async-form]').forEach((form) => {
