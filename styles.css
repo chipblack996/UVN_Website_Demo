@@ -1842,6 +1842,10 @@ p {
   box-shadow: var(--shadow);
 }
 
+.article-lead {
+  margin-bottom: var(--space-7);
+}
+
 .category-lead-copy h2,
 .category-lead-copy p {
   color: #fff;
