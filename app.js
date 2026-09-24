@@ -23,10 +23,10 @@
   backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   window.addEventListener('scroll', updateBackTop, { passive: true });
   updateBackTop();
-  const attributionStorageKey = 'uvn-first-touch-attribution-v1';
+  const attributionStorageKey = 'uvn-first-touch-attribution-v2';
   const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
   const landingUrl = new URL(location.href);
-  const currentAttribution = {};
+  const currentAttribution = { landing_page: landingUrl.href, referrer: document.referrer.slice(0, 500) };
   for (const key of attributionKeys) {
     const value = landingUrl.searchParams.get(key)?.trim();
     if (value) currentAttribution[key] = value.slice(0, 120);
@@ -34,9 +34,9 @@
   let attribution = currentAttribution;
   try {
     const stored = JSON.parse(sessionStorage.getItem(attributionStorageKey) || '{}');
-    if (stored && typeof stored === 'object' && !Array.isArray(stored) && stored.utm_source) {
+    if (stored && typeof stored === 'object' && !Array.isArray(stored) && stored.landing_page) {
       attribution = stored;
-    } else if (currentAttribution.utm_source) {
+    } else {
       sessionStorage.setItem(attributionStorageKey, JSON.stringify(currentAttribution));
     }
   } catch {
@@ -48,7 +48,7 @@
       if (value) landingUrl.searchParams.set(key, value);
     }
   }
-  document.querySelectorAll('input[name="landing_page"]').forEach((input) => { input.value = landingUrl.href; });
+  document.querySelectorAll('input[name="landing_page"]').forEach((input) => { input.value = attribution.landing_page || landingUrl.href; });
 
   document.addEventListener('click', (event) => {
     const actionLink = event.target.closest?.('[data-local-action]');
@@ -79,7 +79,10 @@
       status.className = 'form-status';
       status.textContent = 'Đang gửi…';
       try {
-        const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        const formData = new FormData(form);
+        formData.set('referrer', attribution.referrer || '');
+        for (const key of attributionKeys) formData.set(key, attribution[key] || '');
+        const response = await fetch(form.action, { method: 'POST', body: formData, headers: { Accept: 'application/json' } });
         const data = await response.json();
         status.textContent = data.message || (response.ok ? 'Đã gửi thành công.' : 'Không thể gửi yêu cầu.');
         status.classList.add(response.ok ? 'success' : 'error');
