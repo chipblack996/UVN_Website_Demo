@@ -24,12 +24,12 @@
   window.addEventListener('scroll', updateBackTop, { passive: true });
   updateBackTop();
   const attributionStorageKey = 'uvn-first-touch-attribution-v2';
-  const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'match_type', 'gclid', 'gbraid', 'wbraid'];
   const landingUrl = new URL(location.href);
   const currentAttribution = { landing_page: landingUrl.href, referrer: document.referrer.slice(0, 500) };
   for (const key of attributionKeys) {
     const value = landingUrl.searchParams.get(key)?.trim();
-    if (value) currentAttribution[key] = value.slice(0, 120);
+    if (value) currentAttribution[key] = value.slice(0, key.endsWith('braid') || key === 'gclid' ? 160 : 120);
   }
   let attribution = currentAttribution;
   try {
@@ -89,8 +89,14 @@
         if (response.ok) {
           const interest = form.querySelector('[name="product_interest"]')?.value || 'general';
           const source = form.querySelector('[name="source"]')?.value || 'website';
-          if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { lead_source: source, product_interest: interest });
-          if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: interest, content_category: source });
+          if (data.conversion_recorded && typeof window.gtag === 'function') {
+            window.gtag('event', 'generate_lead', { lead_source: source, product_interest: interest, transaction_id: data.conversion_id || '' });
+            const adsDestination = document.documentElement.dataset.googleAdsLeadDestination || '';
+            if (/^AW-[A-Z0-9-]{4,30}\/[A-Za-z0-9_-]{2,100}$/i.test(adsDestination)) {
+              window.gtag('event', 'conversion', { send_to: adsDestination, transaction_id: data.conversion_id || '' });
+            }
+          }
+          if (data.conversion_recorded && typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: interest, content_category: source });
           if (form.matches('[data-cart-lead-form]')) {
             localStorage.removeItem('uvn-request-cart-v1');
             document.dispatchEvent(new CustomEvent('request-cart-updated'));
