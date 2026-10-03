@@ -1864,6 +1864,12 @@ p {
   box-shadow: var(--shadow);
 }
 
+.category-page .category-lead {
+  margin-top: clamp(36px, 5vw, 72px);
+  margin-bottom: clamp(48px, 7vw, 88px);
+  scroll-margin-top: 104px;
+}
+
 /* 15. SEO & AI workspace */
 .admin-main > .admin-title:has(~ .seo-workspace) {
   display: none;
@@ -3969,6 +3975,27 @@ p {
 .floating-actions .fab-quote:focus-visible {
   background: var(--red-dark);
   border-color: var(--red-dark);
+}
+
+@media (min-width: 641px) {
+  .category-page .floating-actions .fab-quote--attention {
+    animation: category-quote-pulse 3.2s ease-in-out infinite;
+  }
+}
+
+@keyframes category-quote-pulse {
+  0%, 54%, 100% {
+    box-shadow: 0 8px 24px rgba(7, 29, 67, .14), 0 0 0 0 rgba(228, 33, 61, 0);
+    transform: scale(1);
+  }
+  66% {
+    box-shadow: 0 10px 26px rgba(7, 29, 67, .18), 0 0 0 0 rgba(228, 33, 61, .3);
+    transform: scale(1.06);
+  }
+  82% {
+    box-shadow: 0 10px 26px rgba(7, 29, 67, .18), 0 0 0 12px rgba(228, 33, 61, 0);
+    transform: scale(1);
+  }
 }
 
 .floating-actions .fab-cart {
