@@ -4986,9 +4986,23 @@ p {
   background: #fff;
 }
 
-.admin-brand span {
-  font-weight: 800;
+.admin-brand-copy {
+  display: grid;
+  gap: 3px;
+  line-height: 1.15;
   white-space: nowrap;
+}
+
+.admin-brand-copy strong {
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.admin-brand-copy small {
+  color: var(--blue-on-dark-muted);
+  font-size: .66rem;
+  font-weight: 500;
 }
 
 .admin-sidebar nav {
@@ -6081,7 +6095,10 @@ button.admin-account-item:focus-visible {
     max-width: none;
   }
 
-  .admin-body.admin-sidebar-collapsed .admin-brand span,
+  .admin-body.admin-sidebar-collapsed .admin-brand .admin-brand-copy {
+    display: grid;
+  }
+
   .admin-body.admin-sidebar-collapsed .admin-sidebar nav a span {
     display: inline;
   }
