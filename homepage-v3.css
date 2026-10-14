@@ -51,7 +51,7 @@
 .hv-card:hover { box-shadow:0 5px 15px #18396c17; }
 .hv-card h3 { margin:0; color:var(--hv-ink); font-size:14px; line-height:1.35; }
 .hv-card p { margin:4px 0 0; font-size:12px; line-height:1.4; color:#4a607e; }
-.hv-category-grid img { width:100%; height:153px; display:block; object-fit:cover; object-position:50% 25%; }
+.hv-category-grid img { width:100%; height:auto; aspect-ratio:4/3; display:block; object-fit:cover; object-position:50% 0%; }
 .hv-category-grid .hv-card>div { position:relative; padding:10px 30px 10px 12px; }
 .hv-category-grid .hv-card>div>svg { position:absolute; right:11px; top:15px; color:var(--hv-red); }
 .hv-category-grid p { display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
@@ -62,7 +62,7 @@
 .hv-product>p { padding:0 10px; margin-bottom:12px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
 .hv-product>.btn { margin:auto 10px 0; min-height:34px; font-size:11px; padding:7px; }
 .hv-industry-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px; }
-.hv-industry-grid img { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:contain; object-position:center; background:#edf3f9; }
+.hv-industry-grid img { display:block; width:100%; height:auto; aspect-ratio:6/5; object-fit:cover; object-position:50% 0%; }
 .hv-industry-grid .hv-card>div { display:flex; gap:8px; padding:10px 8px; align-items:center; }
 .hv-industry-grid svg { color:var(--hv-blue); flex:none; }
 .hv-industry-grid h3 { font-size:12px; }
@@ -111,6 +111,7 @@
 .hv-section--cta h2 { border:0; padding:0; color:#fff; font-size:25px; }
 .hv-section--cta .hv-section-head p { margin:8px 0 0; color:#dbe7ff; max-width:670px; }
 .hv-cta-actions { display:flex; gap:12px; flex:none; }
+@media(min-width:701px) { .homepage-v3 .hv-cta-actions .btn { height:36px; min-height:36px; padding:6px 16px; } }
 .hv-faq { padding:20px 0; }
 .hv-faq h2 { font-size:22px; }
 .hv-faq details { border-bottom:1px solid #dbe5f1; padding:10px 0; font-size:14px; }
@@ -126,8 +127,11 @@
 @media(max-width:700px) {
   .home-v3 .hv-hero-actions .btn { width:auto; flex:1; white-space:nowrap; font-size:11px; padding-inline:9px; }
 }
-/* Keep supporting copy readable and industry photos fully visible on every viewport. */
-.hv-industry-grid img { height:auto; aspect-ratio:1; object-fit:contain; object-position:center; }
+/* Override older fixed-height tablet/mobile rules with consistent image frames. */
+.hv-category-grid img { height:auto; aspect-ratio:4/3; object-position:50% 0%; }
+.hv-industry-grid img { height:auto; aspect-ratio:6/5; object-fit:cover; object-position:50% 0%; }
 @media(max-width:700px) {
+  .hv-category-grid img { aspect-ratio:1; }
+  .homepage-v3 .hv-cta-actions .btn { min-height:44px; }
   .hv-stats small,.hv-section-head p,.hv-factory-copy>p,.hv-factory-copy li { font-size:14px; }
 }
