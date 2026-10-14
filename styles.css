@@ -546,6 +546,13 @@ body.locked .site-header {
   font-size: 13px;
 }
 
+@media (min-width: 1101px) {
+  .header-inner > .search-box {
+    width: 332.64px;
+    transform: translateX(clamp(-100px, calc(275px - 25vw), 0px));
+  }
+}
+
 .search-suggestions {
   position: absolute;
   z-index: 120;
