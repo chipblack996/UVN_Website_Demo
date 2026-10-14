@@ -153,6 +153,7 @@
 .hv-factory-copy>p,.hv-factory-copy li { font-size:16px; }
 .hv-project-grid .hv-project-card { padding:0; }
 .hv-project-grid .hv-project-body>p { font-size:15px; }
+.hv-articles h3,.hv-articles p { font-size:13px; }
 @media(max-width:700px) {
   .hv-project-card { grid-template-columns:1fr; }
   .hv-project-media { min-height:0; aspect-ratio:16/10; }
