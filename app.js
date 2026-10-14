@@ -1,4 +1,21 @@
 (() => {
+  const isPreview = document.body.hasAttribute('data-home-preview');
+  const trackHome = (name, details = {}) => {
+    if (isPreview) return;
+    // Do not send field values, full URLs or personal contact information to analytics.
+    window.dataLayer = window.dataLayer || [];
+    const payload = { page_path: location.pathname, ...details };
+    if (typeof window.gtag === 'function') window.gtag('event', name, payload);
+    else window.dataLayer.push({ event: name, ...payload });
+  };
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest?.('a');
+    if (!link) return;
+    if (/^#bao-gia/.test(link.getAttribute('href') || '')) trackHome('quote_click');
+    if (link.protocol === 'tel:') trackHome('call_click');
+    if (link.hostname === 'zalo.me') trackHome('zalo_click');
+    if (link.dataset.homeProduct) trackHome('view_product', { product_id: link.dataset.homeProduct });
+  });
   if (window.matchMedia('(max-width: 900px)').matches) {
     const header = document.querySelector('.site-header');
     if (header) header.style.backdropFilter = 'none';
@@ -52,7 +69,7 @@
 
   document.addEventListener('click', (event) => {
     const actionLink = event.target.closest?.('[data-local-action]');
-    if (!actionLink) return;
+    if (isPreview || !actionLink) return;
     const action = actionLink.dataset.localAction || 'unknown';
     if (typeof window.gtag === 'function') window.gtag('event', 'local_action', { action_name: action, link_url: actionLink.href });
     if (typeof window.fbq === 'function') window.fbq('trackCustom', 'LocalAction', { action_name: action });
@@ -70,11 +87,14 @@
   });
 
   document.querySelectorAll('[data-async-form]').forEach((form) => {
+    form.addEventListener('focusin', () => trackHome('form_start', { form_id: form.id || (form.hasAttribute('data-cart-lead-form') ? 'quote_cart' : 'lead_form') }), { once: true });
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      if (isPreview || form.dataset.submitting === 'true') return;
       const button = form.querySelector('button[type="submit"]');
       const status = form.querySelector('.form-status');
       if (!button || !status) return;
+      form.dataset.submitting = 'true';
       button.disabled = true;
       status.className = 'form-status';
       status.textContent = 'Đang gửi…';
@@ -87,16 +107,16 @@
         status.textContent = data.message || (response.ok ? 'Đã gửi thành công.' : 'Không thể gửi yêu cầu.');
         status.classList.add(response.ok ? 'success' : 'error');
         if (response.ok) {
-          const interest = form.querySelector('[name="product_interest"]')?.value || 'general';
+          if (data.conversion_recorded) trackHome('form_complete', { form_id: form.id || 'lead_form', transaction_id: data.conversion_id || '', lead_origin: form.hasAttribute('data-home-form') ? 'homepage' : 'website' });
           const source = form.querySelector('[name="source"]')?.value || 'website';
           if (data.conversion_recorded && typeof window.gtag === 'function') {
-            window.gtag('event', 'generate_lead', { lead_source: source, product_interest: interest, transaction_id: data.conversion_id || '' });
+            window.gtag('event', 'generate_lead', { lead_source: source, transaction_id: data.conversion_id || '' });
             const adsDestination = document.documentElement.dataset.googleAdsLeadDestination || '';
             if (/^AW-[A-Z0-9-]{4,30}\/[A-Za-z0-9_-]{2,100}$/i.test(adsDestination)) {
               window.gtag('event', 'conversion', { send_to: adsDestination, transaction_id: data.conversion_id || '' });
             }
           }
-          if (data.conversion_recorded && typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: interest, content_category: source });
+          if (data.conversion_recorded && typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_category: source });
           if (form.matches('[data-cart-lead-form]')) {
             localStorage.removeItem('uvn-request-cart-v1');
             document.dispatchEvent(new CustomEvent('request-cart-updated'));
@@ -112,7 +132,7 @@
       } catch {
         status.textContent = 'Kết nối bị gián đoạn. Vui lòng thử lại hoặc gọi hotline.';
         status.classList.add('error');
-      } finally { button.disabled = false; }
+      } finally { button.disabled = false; delete form.dataset.submitting; }
     });
   });
 
@@ -324,6 +344,7 @@
     if (existing) existing.quantity = Math.min(1_000_000, Number(existing.quantity || 0) + quantity);
     else items.push({ ...item, key });
     writeCart(items);
+    trackHome('add_to_quote_cart', { product_id: configurator.dataset.productId || '', quantity });
     if (variantStatus) variantStatus.textContent = `Đã thêm mẫu ${item.variantCode} vào giỏ hàng.`;
     setCartOpen(true);
   });

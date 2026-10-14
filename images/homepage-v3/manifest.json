@@ -1,0 +1,110 @@
+{
+  "/images/categories/ao-thun.webp": {
+    "small": "/images/homepage-v3/ao-thun-7d95343636-480.webp",
+    "large": "/images/homepage-v3/ao-thun-7d95343636-960.webp",
+    "width": 1000,
+    "height": 1250
+  },
+  "/images/categories/ao-so-mi.webp": {
+    "small": "/images/homepage-v3/ao-so-mi-fb50c82823-480.webp",
+    "large": "/images/homepage-v3/ao-so-mi-fb50c82823-960.webp",
+    "width": 1000,
+    "height": 1250
+  },
+  "/images/categories/ao-blouse-y-te.webp": {
+    "small": "/images/homepage-v3/ao-blouse-y-te-d2fc03d2d9-480.webp",
+    "large": "/images/homepage-v3/ao-blouse-y-te-d2fc03d2d9-960.webp",
+    "width": 1000,
+    "height": 1250
+  },
+  "/images/categories/bao-ho-lao-dong.webp": {
+    "small": "/images/homepage-v3/bao-ho-lao-dong-32f6a5a005-480.webp",
+    "large": "/images/homepage-v3/bao-ho-lao-dong-32f6a5a005-960.webp",
+    "width": 1000,
+    "height": 1250
+  },
+  "/images/categories/ao-khoac.webp": {
+    "small": "/images/homepage-v3/ao-khoac-e646c82b4a-480.webp",
+    "large": "/images/homepage-v3/ao-khoac-e646c82b4a-960.webp",
+    "width": 1000,
+    "height": 1250
+  },
+  "/images/categories/tap-de.webp": {
+    "small": "/images/homepage-v3/tap-de-5560252fa8-480.webp",
+    "large": "/images/homepage-v3/tap-de-5560252fa8-960.webp",
+    "width": 1000,
+    "height": 1250
+  },
+  "/images/categories/chan-vay.webp": {
+    "small": "/images/homepage-v3/chan-vay-8ba8e4e6ec-480.webp",
+    "large": "/images/homepage-v3/chan-vay-8ba8e4e6ec-960.webp",
+    "width": 1000,
+    "height": 1250
+  },
+  "/images/products/ao-thun/ao-thun-dong-phuc-mau-xam-boi-canh-dai-dien-v1.webp": {
+    "small": "/images/homepage-v3/ao-thun-dong-phuc-mau-xam-boi-canh-dai-dien-v1-1608b45111-480.webp",
+    "large": "/images/homepage-v3/ao-thun-dong-phuc-mau-xam-boi-canh-dai-dien-v1-1608b45111-960.webp",
+    "width": 1200,
+    "height": 1200
+  },
+  "/images/products/ao-so-mi/ao-so-mi-cong-nhan-tay-dai-mau-xanh-ghi.webp": {
+    "small": "/images/homepage-v3/ao-so-mi-cong-nhan-tay-dai-mau-xanh-ghi-8454dcc7c8-480.webp",
+    "large": "/images/homepage-v3/ao-so-mi-cong-nhan-tay-dai-mau-xanh-ghi-8454dcc7c8-960.webp",
+    "width": 1200,
+    "height": 1200
+  },
+  "/images/products/blouse/bo-blouse-spa-co-v-mau-tim-lavender.webp": {
+    "small": "/images/homepage-v3/bo-blouse-spa-co-v-mau-tim-lavender-f0f21a723e-480.webp",
+    "large": "/images/homepage-v3/bo-blouse-spa-co-v-mau-tim-lavender-f0f21a723e-960.webp",
+    "width": 1200,
+    "height": 1200
+  },
+  "/images/products/bao-ho/beige-navy.webp": {
+    "small": "/images/homepage-v3/beige-navy-c8baaccba0-480.webp",
+    "large": "/images/homepage-v3/beige-navy-c8baaccba0-960.webp",
+    "width": 1200,
+    "height": 1200
+  },
+  "/images/products/ao-khoac/ao-khoac-activation-mau-tim-phoi-xam.webp": {
+    "small": "/images/homepage-v3/ao-khoac-activation-mau-tim-phoi-xam-843b0ca973-480.webp",
+    "large": "/images/homepage-v3/ao-khoac-activation-mau-tim-phoi-xam-843b0ca973-960.webp",
+    "width": 1200,
+    "height": 1200
+  },
+  "/images/products/tap-de/tap-de-ngang-ke-soc-bistro-xanh-navy.webp": {
+    "small": "/images/homepage-v3/tap-de-ngang-ke-soc-bistro-xanh-navy-9cbfd08538-480.webp",
+    "large": "/images/homepage-v3/tap-de-ngang-ke-soc-bistro-xanh-navy-9cbfd08538-960.webp",
+    "width": 1200,
+    "height": 1200
+  },
+  "/images/company/xuong-uniform-viet-nam-noi-that.webp": {
+    "small": "/images/homepage-v3/xuong-uniform-viet-nam-noi-that-d4ed72f6ee-480.webp",
+    "large": "/images/homepage-v3/xuong-uniform-viet-nam-noi-that-d4ed72f6ee-960.webp",
+    "width": 1600,
+    "height": 1200
+  },
+  "/images/company/xuong-uniform-viet-nam-bang-hieu.webp": {
+    "small": "/images/homepage-v3/xuong-uniform-viet-nam-bang-hieu-279e94e3a4-480.webp",
+    "large": "/images/homepage-v3/xuong-uniform-viet-nam-bang-hieu-279e94e3a4-960.webp",
+    "width": 1060,
+    "height": 702
+  },
+  "/images/articles/chon-vai-dong-phuc-vinh-long-theo-cong-viec.webp": {
+    "small": "/images/homepage-v3/chon-vai-dong-phuc-vinh-long-theo-cong-viec-5e2086d448-480.webp",
+    "large": "/images/homepage-v3/chon-vai-dong-phuc-vinh-long-theo-cong-viec-5e2086d448-960.webp",
+    "width": 1400,
+    "height": 788
+  },
+  "/images/articles/ao-thun-polo-dong-phuc-an-giang-chon-vai.webp": {
+    "small": "/images/homepage-v3/ao-thun-polo-dong-phuc-an-giang-chon-vai-08ded7104e-480.webp",
+    "large": "/images/homepage-v3/ao-thun-polo-dong-phuc-an-giang-chon-vai-08ded7104e-960.webp",
+    "width": 1400,
+    "height": 788
+  },
+  "/images/articles/quy-trinh-dat-may-dong-phuc-an-giang-tu-xa.webp": {
+    "small": "/images/homepage-v3/quy-trinh-dat-may-dong-phuc-an-giang-tu-xa-3ed618cb36-480.webp",
+    "large": "/images/homepage-v3/quy-trinh-dat-may-dong-phuc-an-giang-tu-xa-3ed618cb36-960.webp",
+    "width": 1400,
+    "height": 788
+  }
+}
