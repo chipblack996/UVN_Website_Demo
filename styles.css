@@ -421,6 +421,11 @@ p {
   box-shadow: 0 2px 10px rgba(7, 29, 67, .04);
 }
 
+/* Keep the mobile drawer above the body backdrop (the sticky header is its stacking context). */
+body.locked .site-header {
+  z-index: 300;
+}
+
 .utility {
   color: var(--blue-on-dark);
   background: var(--blue-950);
@@ -3954,7 +3959,7 @@ p {
 }
 
 .floating-actions .fab-zalo {
-  color: #0068ff;
+  color: #005de6;
   background: #f2f7ff;
 }
 
