@@ -1,4 +1,10 @@
 {
+  "/images/homepage-v3/hero-mixed-uniform-team-v2-1280.webp": {
+    "small": "/images/homepage-v3/hero-mixed-uniform-team-v2-640.webp",
+    "large": "/images/homepage-v3/hero-mixed-uniform-team-v2-1280.webp",
+    "width": 1280,
+    "height": 960
+  },
   "/images/categories/ao-thun.webp": {
     "small": "/images/homepage-v3/ao-thun-7d95343636-480.webp",
     "large": "/images/homepage-v3/ao-thun-7d95343636-960.webp",
