@@ -3700,13 +3700,26 @@ body.locked .site-header {
   line-height: 1.45;
 }
 
-.footer-working-hours > strong,
-.footer-hours-days {
+.footer-working-hours > strong {
   color: #082b70;
   font-weight: 700;
 }
 
-.footer-hours-times {
+.footer-company .footer-hours-list {
+  display: block;
+  margin: 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.footer-company .footer-hours-list li {
+  display: list-item;
+  margin-top: 3px;
+  color: #536177;
+  font-weight: 400;
+}
+
+.footer-company .footer-hours-list li::marker {
   color: #536177;
 }
 
